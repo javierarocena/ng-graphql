@@ -19,7 +19,7 @@ export class AppComponent {
 
   loadData() {
     const conceptName = 'countries';
-    const inputsName = ['code','name','capital'];
+    const inputsName = ['name','capital','emoji'];
     this.contries = this.apollo
       .watchQuery({
         query: gql`
