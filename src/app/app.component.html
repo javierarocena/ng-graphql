@@ -1,6 +1,7 @@
 <h1>Engine GraphQL</h1>
+<!-- <pre>{{PIECEvalue | async | json}}</pre> -->
 <ul>
-  <li *ngFor="let coutnry of contries | async">
-     {{coutnry.emoji}} {{coutnry.name}} {{coutnry.capital}}
+  <li *ngFor="let item of PIECEvalue | async" [style.backgroundColor]="item.color">
+     {{item.name}}
   </li>
 </ul>

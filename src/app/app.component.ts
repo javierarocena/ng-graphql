@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators';
 })
 export class AppComponent {
 
-  contries: any;
+  PIECEvalue: any;
 
   constructor(private apollo: Apollo) {}
 
@@ -18,14 +18,14 @@ export class AppComponent {
   }
 
   loadData() {
-    const conceptName = 'countries';
-    const inputsName = ['name','capital','emoji'];
-    this.contries = this.apollo
+    const conceptName = 'persons';
+    const inputsName = 'name,color';
+    this.PIECEvalue = this.apollo
       .watchQuery({
         query: gql`
         {
           ${conceptName} {
-            ${inputsName.join(',')}
+            ${inputsName.split(',').join(',')}
           }
         }
       `,
